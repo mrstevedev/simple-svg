@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      svg g#Face {
+        cursor: pointer;
+      }
+    </style>
+
+</head>
+<body>
+    <svg xmlns="http://www.w3.org/2000/svg" width="900" height="514" viewBox="0 0 900 514">
+        <g id="Face" class="face" transform="translate(-265 -141)" onclick="handleClick(event)">
+          <g id="Happy_Face" data-name="Happy Face">
+            <circle id="Ellipse_1" data-name="Ellipse 1" cx="176" cy="176" r="176" transform="translate(265 141)" fill="#eaea5b"/>
+            <circle id="Ellipse_2" data-name="Ellipse 2" cx="43.5" cy="43.5" r="43.5" transform="translate(332 230)" fill="#191919"/>
+            <circle id="Ellipse_3" data-name="Ellipse 3" cx="43.5" cy="43.5" r="43.5" transform="translate(451 230)" fill="#191919"/>
+            <circle id="Ellipse_5" data-name="Ellipse 5" cx="25" cy="25" r="25" transform="translate(460 369)" fill="#191919"/>
+          </g>
+          <g id="Comment_Bubble" class="comment" data-name="Comment Bubble">
+            <path id="Union_1" data-name="Union 1" d="M34.937,242a8,8,0,0,1-8-8V54.547L0,.135H29.966v1.6A7.965,7.965,0,0,1,34.937,0h533a8,8,0,0,1,8,8V234a8,8,0,0,1-8,8Z" transform="translate(589.063 413)" fill="#f4f4f4"/>
+            <text id="Location:_Cafe_Coyote" data-name="Location: Cafe Coyote" transform="translate(673 462)" fill="#1c1c1c" font-size="30" font-family="HelveticaNeue, Helvetica Neue"><tspan x="0" y="29">Location: Cafe Coyote</tspan></text>
+          </g>
+        </g>
+      </svg>
+      <script>
+        function handleClick(event) {
+          const face = document.querySelector('.face');
+          const location = document.querySelector('.comment');
+  
+          const getChild = event.currentTarget.childNodes[3];
+          const getTextContent = getChild.childNodes[3].textContent;
+          const restaurantName = getTextContent.replace(/Location: /gi, '');
+          console.log(restaurantName);
+        }
+      </script>
+</body>
+</html>
